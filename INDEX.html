@@ -1,0 +1,699 @@
+<!-- Selección de Pago Seguro -->
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>BiciRent - Payment Selection</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed": "#001a42",
+                    "primary-fixed-dim": "#bec6e0",
+                    "outline": "#76777d",
+                    "inverse-on-surface": "#ebf1ff",
+                    "surface-container-high": "#dde9ff",
+                    "tertiary-container": "#001a42",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "on-background": "#0d1c2f",
+                    "on-tertiary-container": "#3980f4",
+                    "error": "#ba1a1a",
+                    "error-container": "#ffdad6",
+                    "on-error": "#ffffff",
+                    "on-surface": "#0d1c2f",
+                    "outline-variant": "#c6c6cd",
+                    "on-primary-fixed-variant": "#3f465c",
+                    "primary-fixed": "#dae2fd",
+                    "on-tertiary-fixed-variant": "#004395",
+                    "inverse-surface": "#233144",
+                    "secondary": "#006c49",
+                    "secondary-container": "#6cf8bb",
+                    "on-primary-container": "#7c839b",
+                    "tertiary-fixed": "#d8e2ff",
+                    "secondary-fixed": "#6ffbbe",
+                    "on-primary-fixed": "#131b2e",
+                    "primary-container": "#131b2e",
+                    "surface-container": "#e6eeff",
+                    "primary": "#000000",
+                    "surface-dim": "#ccdbf4",
+                    "surface": "#f8f9ff",
+                    "inverse-primary": "#bec6e0",
+                    "surface-bright": "#f8f9ff",
+                    "on-error-container": "#93000a",
+                    "surface-container-low": "#eff4ff",
+                    "surface-tint": "#565e74",
+                    "background": "#f8f9ff",
+                    "on-surface-variant": "#45464d",
+                    "on-secondary-fixed-variant": "#005236",
+                    "on-secondary-fixed": "#002113",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary": "#000000",
+                    "on-secondary-container": "#00714d",
+                    "surface-container-highest": "#d5e3fd",
+                    "surface-variant": "#d5e3fd",
+                    "tertiary-fixed-dim": "#adc6ff",
+                    "on-primary": "#ffffff",
+                    "secondary-fixed-dim": "#4edea3"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-margin": "24px",
+                    "stack-md": "16px",
+                    "stack-lg": "32px",
+                    "gutter": "16px",
+                    "stack-sm": "8px",
+                    "base": "4px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "label-md": ["Inter"],
+                    "headline-xl": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "label-sm": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-xl": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "34px", "fontWeight": "700"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.filled {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased min-h-screen flex flex-col pt-[88px] pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface border-b-2 border-primary shadow-sm flex items-center justify-between px-container-margin py-stack-md h-[88px]">
+<button aria-label="Go back" class="text-primary hover:opacity-80 transition-opacity active:scale-95 duration-150 flex items-center justify-center p-2 -ml-2 rounded-full">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md-mobile font-bold text-on-surface">Ebike</h1>
+<div aria-label="Secure" class="text-primary hover:opacity-80 transition-opacity active:scale-95 duration-150 flex items-center justify-center p-2 -mr-2 rounded-full">
+<span class="material-symbols-outlined">lock</span>
+</div>
+</header>
+<main class="flex-grow px-container-margin max-w-3xl mx-auto w-full pt-stack-md">
+<div class="flex items-center space-x-2 mb-stack-lg text-secondary">
+<span class="material-symbols-outlined filled">verified</span>
+<span class="font-label-md text-label-md uppercase tracking-widest">Secure Checkout</span>
+</div>
+<!-- Rental Summary -->
+<section class="bg-surface-container-lowest rounded-xl border border-outline-variant p-stack-md mb-stack-lg shadow-sm">
+<h2 class="font-headline-md text-headline-md-mobile text-on-surface mb-stack-md">Rental Summary</h2>
+<div class="flex items-start space-x-stack-md pb-stack-md border-b border-outline-variant">
+<div class="w-24 h-24 rounded-lg overflow-hidden bg-surface-container-high flex-shrink-0">
+<img alt="Selected Bicycle" class="w-full h-full object-cover" data-alt="A sleek, modern electric bicycle with a matte black frame and subtle blue accents, parked against a clean, light-colored concrete wall in a bright, sunlit urban environment. The bike looks well-maintained, reliable, and ready for a city commute. The lighting emphasizes the mechanical details and premium finish of the bicycle." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkBiN-BvHwPkyP5MLEWEW1wHvhP4pNTZ1wlksqiQVDZfeVFeDW94ybo24xDDGZG-HS6aQFhIptIndH3Ft4-xkKj_Ldp2pWc_6hINOETr-u8DsU9o0KWwQqdzatWWC_vP5iyjWmmMQDzjxmknBpUVI-Yfl5R52vsFW69gxqAVffhn5QyBFuJlqXPa5burBdICKUjdVjdc9yFSp5a39iSraHUm8Rwpq-SzIrfuk7NpQ23_fofXoi37Bstg">
+</div>
+<div class="flex-grow">
+<h3 class="font-body-lg text-body-lg font-semibold">City E-Bike Pro</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant font-mono mt-1">ID: BICI-8492</p>
+<div class="flex items-center space-x-1 text-secondary mt-2">
+<span class="material-symbols-outlined text-[16px] filled">battery_charging_full</span>
+<span class="font-label-sm text-label-sm">98% Charge</span>
+</div>
+</div>
+</div>
+<div class="pt-stack-md space-y-stack-sm">
+<div class="flex justify-between items-center font-body-md text-body-md text-on-surface-variant">
+<span class="">Duration</span>
+<span class="">2 Hours</span>
+</div>
+<div class="flex justify-between items-center font-body-md text-body-md text-on-surface-variant">
+<span class="">Rate</span>
+<span class="">$5.00 / hr</span>
+</div>
+<div class="flex justify-between items-center font-body-lg text-body-lg font-bold text-on-surface pt-2">
+<span class="">Total</span>
+<span class="">$10.00</span>
+</div>
+</div>
+</section>
+<!-- Payment Methods -->
+<section class="space-y-stack-md mb-stack-lg">
+<h2 class="font-headline-md text-headline-md-mobile text-on-surface">Payment Method</h2>
+<!-- Credit Card Option (Active) -->
+<div class="bg-surface-container-lowest rounded-xl border-2 border-primary shadow-[0_10px_15px_-3px_rgba(15,23,42,0.08)] overflow-hidden relative">
+<div class="absolute top-0 right-0 bg-secondary-container text-on-secondary-container px-3 py-1 rounded-bl-lg font-label-sm text-label-sm flex items-center space-x-1">
+<span class="material-symbols-outlined text-[14px]">shield</span>
+<span class="">SECURE</span>
+</div>
+<div class="p-stack-md border-b border-outline-variant bg-surface flex items-center space-x-3 cursor-pointer">
+<div class="w-5 h-5 rounded-full border-2 border-primary flex items-center justify-center">
+<div class="w-2.5 h-2.5 rounded-full bg-primary"></div>
+</div>
+<span class="material-symbols-outlined text-on-surface">credit_card</span>
+<span class="font-body-md text-body-md font-semibold text-on-surface">Credit / Debit Card</span>
+</div>
+<div class="p-stack-md bg-surface-container-lowest space-y-stack-md">
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-1" for="cardNumber">Card Number</label>
+<div class="relative">
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg px-4 py-3 font-body-md text-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-shadow" id="cardNumber" placeholder="0000 0000 0000 0000" type="text">
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-outline-variant">lock</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-gutter">
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-1" for="expiry">Expiry Date</label>
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg px-4 py-3 font-body-md text-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-shadow" id="expiry" placeholder="MM/YY" type="text">
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-1" for="cvv">CVV</label>
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg px-4 py-3 font-body-md text-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-shadow" id="cvv" placeholder="123" type="text">
+</div>
+</div>
+<div class="flex items-center space-x-2 text-secondary bg-surface-container-low p-2 rounded-md justify-center">
+<span class="material-symbols-outlined text-[16px]">lock_clock</span>
+<span class="font-label-sm text-label-sm">256-bit SSL Encryption Active</span>
+</div>
+</div>
+</div>
+<!-- Bank Transfer Option (Inactive) -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant p-stack-md flex items-center justify-between cursor-pointer hover:bg-surface-container-low transition-colors">
+<div class="flex items-center space-x-3">
+<div class="w-5 h-5 rounded-full border-2 border-outline-variant flex items-center justify-center"></div>
+<span class="material-symbols-outlined text-outline">account_balance</span>
+<span class="font-body-md text-body-md text-on-surface">Bank Transfer</span>
+</div>
+</div>
+<!-- Upload Receipt Option (Inactive) -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant p-stack-md flex items-center justify-between cursor-pointer hover:bg-surface-container-low transition-colors">
+<div class="flex items-center space-x-3">
+<div class="w-5 h-5 rounded-full border-2 border-outline-variant flex items-center justify-center"></div>
+<span class="material-symbols-outlined text-outline">upload_file</span>
+<span class="font-body-md text-body-md text-on-surface">Upload Receipt</span>
+</div>
+</div>
+</section>
+<!-- Action Button -->
+<div class="mt-stack-lg mb-stack-lg">
+<button class="w-full bg-primary text-on-primary font-headline-md text-headline-md-mobile py-4 rounded-lg flex items-center justify-center space-x-2 hover:opacity-90 active:scale-[0.98] transition-all shadow-md">
+<span class="material-symbols-outlined">lock_person</span>
+<span class="">Pay Securely $10.00</span>
+</button>
+</div>
+</main>
+<!-- BottomNavBar (Hidden on desktop, present as shell navigation) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 rounded-t-xl bg-surface-container-lowest shadow-[0_-4px_10px_rgba(0,0,0,0.05)] flex justify-around items-center h-20 px-4 pb-safe border-t-0">
+<button class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container-high rounded-full active:scale-90 transition-all duration-200">
+<span class="material-symbols-outlined">pedal_bike</span>
+<span class="font-label-sm text-label-sm mt-1">Rent</span>
+</button>
+<button class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-4 py-1 active:scale-90 transition-all duration-200 shadow-sm">
+<span class="material-symbols-outlined filled">payments</span>
+<span class="font-label-sm text-label-sm mt-1 font-semibold">Payments</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container-high rounded-full active:scale-90 transition-all duration-200">
+<span class="material-symbols-outlined">receipt_long</span>
+<span class="font-label-sm text-label-sm mt-1">History</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container-high rounded-full active:scale-90 transition-all duration-200">
+<span class="material-symbols-outlined">shield_person</span>
+<span class="font-label-sm text-label-sm mt-1">Security</span>
+</button>
+</nav>
+<!-- Footer -->
+<footer class="w-full py-stack-lg bg-surface-container-low border-t border-outline-variant flex flex-col items-center space-y-base px-container-margin mb-24 md:mb-0">
+<h4 class="font-label-md text-label-md uppercase tracking-widest text-primary font-bold mb-2">BiciRent</h4>
+<div class="flex space-x-4 mb-4">
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:underline decoration-secondary transition-all" href="#">PCI-DSS Certified</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:underline decoration-secondary transition-all" href="#">Privacy Policy</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:underline decoration-secondary transition-all" href="#">Terms of Service</a>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">© 2024 BiciRent Secure Payments</p>
+</footer>
+
+
+</body></html>
+
+<!-- Design System -->
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>BiciRent - Evidence Upload</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-tertiary-fixed": "#001a42",
+                      "primary-fixed-dim": "#bec6e0",
+                      "outline": "#76777d",
+                      "inverse-on-surface": "#ebf1ff",
+                      "surface-container-high": "#dde9ff",
+                      "tertiary-container": "#001a42",
+                      "on-tertiary": "#ffffff",
+                      "on-secondary": "#ffffff",
+                      "on-background": "#0d1c2f",
+                      "on-tertiary-container": "#3980f4",
+                      "error": "#ba1a1a",
+                      "error-container": "#ffdad6",
+                      "on-error": "#ffffff",
+                      "on-surface": "#0d1c2f",
+                      "outline-variant": "#c6c6cd",
+                      "on-primary-fixed-variant": "#3f465c",
+                      "primary-fixed": "#dae2fd",
+                      "on-tertiary-fixed-variant": "#004395",
+                      "inverse-surface": "#233144",
+                      "secondary": "#006c49",
+                      "secondary-container": "#6cf8bb",
+                      "on-primary-container": "#7c839b",
+                      "tertiary-fixed": "#d8e2ff",
+                      "secondary-fixed": "#6ffbbe",
+                      "on-primary-fixed": "#131b2e",
+                      "primary-container": "#131b2e",
+                      "surface-container": "#e6eeff",
+                      "primary": "#000000",
+                      "surface-dim": "#ccdbf4",
+                      "surface": "#f8f9ff",
+                      "inverse-primary": "#bec6e0",
+                      "surface-bright": "#f8f9ff",
+                      "on-error-container": "#93000a",
+                      "surface-container-low": "#eff4ff",
+                      "surface-tint": "#565e74",
+                      "background": "#f8f9ff",
+                      "on-surface-variant": "#45464d",
+                      "on-secondary-fixed-variant": "#005236",
+                      "on-secondary-fixed": "#002113",
+                      "surface-container-lowest": "#ffffff",
+                      "tertiary": "#000000",
+                      "on-secondary-container": "#00714d",
+                      "surface-container-highest": "#d5e3fd",
+                      "surface-variant": "#d5e3fd",
+                      "tertiary-fixed-dim": "#adc6ff",
+                      "on-primary": "#ffffff",
+                      "secondary-fixed-dim": "#4edea3"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "container-margin": "24px",
+                      "stack-md": "16px",
+                      "stack-lg": "32px",
+                      "gutter": "16px",
+                      "stack-sm": "8px",
+                      "base": "4px"
+              },
+              "fontFamily": {
+                      "headline-lg": ["Inter"],
+                      "body-md": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "headline-md": ["Inter"],
+                      "label-md": ["Inter"],
+                      "headline-xl": ["Inter"],
+                      "headline-lg-mobile": ["Inter"],
+                      "label-sm": ["Inter"]
+              },
+              "fontSize": {
+                      "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "headline-xl": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "headline-lg-mobile": ["28px", {"lineHeight": "34px", "fontWeight": "700"}],
+                      "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}]
+              }
+            }
+          }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md antialiased pb-safe">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface dark:bg-inverse-surface flex items-center justify-between px-container-margin py-stack-md bg-surface-container-lowest dark:bg-surface-container shadow-sm border-b-2 border-primary dark:border-primary-fixed-dim">
+<button aria-label="Go back" class="text-primary dark:text-primary-fixed-dim hover:opacity-80 transition-opacity active:scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md-mobile md:text-headline-md font-bold text-on-surface dark:text-inverse-on-surface">Ebike</h1>
+<div class="text-primary dark:text-primary-fixed-dim">
+<span class="material-symbols-outlined" data-icon="lock">lock</span>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-[88px] px-container-margin pb-[120px] md:pb-container-margin max-w-3xl mx-auto w-full">
+<!-- Header & Instructions -->
+<section class="mb-stack-lg mt-stack-md">
+<h2 class="font-headline-lg-mobile md:text-headline-lg text-primary mb-stack-sm">Upload Payment Receipt</h2>
+<p class="text-on-surface-variant font-body-md">
+                Please upload a clear, legible photo of your bank transfer receipt or payment voucher. Ensure the date, amount, and reference number are fully visible.
+            </p>
+</section>
+<!-- Upload Area (Dashed) -->
+<section class="mb-stack-lg">
+<div class="relative bg-surface-container-low border-2 border-dashed border-outline-variant rounded-xl p-stack-lg flex flex-col items-center justify-center text-center cursor-pointer hover:bg-surface-container transition-colors group">
+<input accept="image/*" aria-label="Upload receipt image" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10" type="file">
+<div class="bg-surface rounded-full p-4 mb-stack-sm shadow-sm group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[32px] text-primary" data-icon="add_a_photo">add_a_photo</span>
+</div>
+<p class="font-label-md text-primary mb-1">Tap to capture or select photo</p>
+<p class="font-label-sm text-on-surface-variant">JPG, PNG up to 10MB</p>
+</div>
+</section>
+<!-- Form Elements -->
+<section class="space-y-stack-md mb-stack-lg">
+<!-- External Ref Number Input -->
+<div class="flex flex-col space-y-base">
+<label class="font-label-md text-on-surface" for="refNumber">External Reference Number</label>
+<input class="w-full h-12 px-4 bg-surface border border-outline-variant rounded-lg text-on-surface focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-shadow placeholder-outline" id="refNumber" placeholder="e.g. TR-987654321" required="" type="text">
+</div>
+<!-- Secure Badge -->
+<div class="flex items-center space-x-2 bg-surface-container-low p-stack-sm rounded-lg border border-outline-variant mt-stack-md">
+<span class="material-symbols-outlined text-secondary text-[20px]" data-icon="gpp_good">gpp_good</span>
+<span class="font-label-sm text-on-surface-variant">Your upload is encrypted and securely transmitted.</span>
+</div>
+</section>
+<!-- Action Area -->
+<section class="mt-stack-lg flex flex-col space-y-stack-md">
+<button class="w-full bg-primary text-on-primary font-label-md py-4 rounded-lg shadow-sm hover:opacity-90 active:scale-95 transition-all flex items-center justify-center space-x-2">
+<span class="">Submit Proof</span>
+<span class="material-symbols-outlined text-[20px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<button class="w-full bg-transparent border border-outline-variant text-on-surface font-label-md py-4 rounded-lg hover:bg-surface-container-low active:scale-95 transition-all">
+                Cancel
+            </button>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 rounded-t-xl bg-surface-container-lowest dark:bg-surface-container shadow-[0_-4px_10px_rgba(0,0,0,0.05)] flex justify-around items-center h-20 px-4 pb-safe shadow-lg">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-1 hover:bg-surface-container-high dark:hover:bg-surface-variant rounded-full active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="pedal_bike">pedal_bike</span>
+<span class="font-label-sm text-label-sm mt-1">Rent</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-secondary-container dark:bg-secondary text-on-secondary-container dark:text-on-secondary rounded-full px-4 py-1 active:scale-90 transition-all duration-200 shadow-sm" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span class="font-label-sm text-label-sm mt-1">Payments</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-1 hover:bg-surface-container-high dark:hover:bg-surface-variant rounded-full active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+<span class="font-label-sm text-label-sm mt-1">History</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-1 hover:bg-surface-container-high dark:hover:bg-surface-variant rounded-full active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="shield_person">shield_person</span>
+<span class="font-label-sm text-label-sm mt-1">Security</span>
+</a>
+</nav>
+
+
+</body></html>
+
+<!-- Carga de Comprobante -->
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>BiciRent - Transaction History</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed": "#001a42",
+                        "primary-fixed-dim": "#bec6e0",
+                        "outline": "#76777d",
+                        "inverse-on-surface": "#ebf1ff",
+                        "surface-container-high": "#dde9ff",
+                        "tertiary-container": "#001a42",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "on-background": "#0d1c2f",
+                        "on-tertiary-container": "#3980f4",
+                        "error": "#ba1a1a",
+                        "error-container": "#ffdad6",
+                        "on-error": "#ffffff",
+                        "on-surface": "#0d1c2f",
+                        "outline-variant": "#c6c6cd",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "primary-fixed": "#dae2fd",
+                        "on-tertiary-fixed-variant": "#004395",
+                        "inverse-surface": "#233144",
+                        "secondary": "#006c49",
+                        "secondary-container": "#6cf8bb",
+                        "on-primary-container": "#7c839b",
+                        "tertiary-fixed": "#d8e2ff",
+                        "secondary-fixed": "#6ffbbe",
+                        "on-primary-fixed": "#131b2e",
+                        "primary-container": "#131b2e",
+                        "surface-container": "#e6eeff",
+                        "primary": "#000000",
+                        "surface-dim": "#ccdbf4",
+                        "surface": "#f8f9ff",
+                        "inverse-primary": "#bec6e0",
+                        "surface-bright": "#f8f9ff",
+                        "on-error-container": "#93000a",
+                        "surface-container-low": "#eff4ff",
+                        "surface-tint": "#565e74",
+                        "background": "#f8f9ff",
+                        "on-surface-variant": "#45464d",
+                        "on-secondary-fixed-variant": "#005236",
+                        "on-secondary-fixed": "#002113",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary": "#000000",
+                        "on-secondary-container": "#00714d",
+                        "surface-container-highest": "#d5e3fd",
+                        "surface-variant": "#d5e3fd",
+                        "tertiary-fixed-dim": "#adc6ff",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed-dim": "#4edea3"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-margin": "24px",
+                        "stack-md": "16px",
+                        "stack-lg": "32px",
+                        "gutter": "16px",
+                        "stack-sm": "8px",
+                        "base": "4px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-xl": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "label-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "34px", "fontWeight": "700" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md min-h-screen pt-20 pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface dark:bg-inverse-surface text-primary dark:text-primary-fixed-dim font-headline-md text-headline-md-mobile shadow-sm bg-surface-container-lowest dark:bg-surface-container border-b-2 border-primary dark:border-primary-fixed-dim">
+<div class="flex items-center justify-between px-container-margin py-stack-md">
+<button class="hover:opacity-80 transition-opacity active:scale-95 transition-transform duration-150 text-primary dark:text-primary-fixed-dim flex items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings: &quot;FILL&quot; 1;">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md-mobile font-bold text-on-surface dark:text-inverse-on-surface">Ebike</h1>
+<button class="hover:opacity-80 transition-opacity active:scale-95 transition-transform duration-150 text-primary dark:text-primary-fixed-dim flex items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings: &quot;FILL&quot; 1;">lock</span>
+</button>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-container-margin md:px-8 space-y-stack-lg">
+<!-- Header & Search -->
+<div class="space-y-stack-md pt-stack-md">
+<div>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">My Transactions</h2>
+<p class="font-body-md text-body-md text-on-surface-variant flex items-center gap-2 mt-base">
+<span class="material-symbols-outlined text-[16px]">format_image_left</span>
+                    All transactions are encrypted and monitored
+                </p>
+</div>
+<div class="relative max-w-md">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline">search</span>
+</div>
+<input class="w-full pl-10 pr-4 py-3 bg-surface-container-lowest border border-outline-variant rounded-lg font-body-md text-body-md focus:ring-2 focus:ring-tertiary-container focus:border-transparent transition-all shadow-[0_10px_15px_-3px_rgba(15,23,42,0.08)]" placeholder="Search Reference ID" type="text">
+</div>
+</div>
+<!-- Transactions List -->
+<div class="space-y-stack-sm">
+<!-- Transaction Card 1 (Success) -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-stack-md shadow-[0_10px_15px_-3px_rgba(15,23,42,0.08)] flex flex-col md:flex-row md:items-center justify-between gap-stack-sm hover:bg-surface-container-low transition-colors group cursor-pointer relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-secondary"></div>
+<div class="flex flex-col gap-1 pl-2">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-on-surface-variant">24 Oct 2023, 14:30</span>
+<div class="flex items-center gap-1 bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded-full font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                            Success
+                        </div>
+</div>
+<span class="font-headline-md text-headline-md text-on-surface">$12.50</span>
+<span class="font-label-sm text-label-sm text-outline font-mono">REF: BR-8842-A1</span>
+</div>
+<div class="flex items-center gap-4 pl-2 md:pl-0">
+<button class="bg-transparent border border-outline text-on-surface-variant px-4 py-2 rounded font-label-md text-label-md hover:bg-surface-variant transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">receipt</span> View Receipt
+                    </button>
+</div>
+</div>
+<!-- Transaction Card 2 (Failed) -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-stack-md shadow-[0_10px_15px_-3px_rgba(15,23,42,0.08)] flex flex-col md:flex-row md:items-center justify-between gap-stack-sm hover:bg-surface-container-low transition-colors group cursor-pointer relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-error"></div>
+<div class="flex flex-col gap-1 pl-2">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-on-surface-variant">22 Oct 2023, 09:15</span>
+<div class="flex items-center gap-1 bg-error-container text-on-error-container px-2 py-0.5 rounded-full font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">error</span>
+                            Failed
+                        </div>
+</div>
+<span class="font-headline-md text-headline-md text-on-surface line-through text-outline">$5.00</span>
+<span class="font-label-sm text-label-sm text-outline font-mono">REF: BR-8841-F2</span>
+</div>
+<div class="flex items-center gap-4 pl-2 md:pl-0">
+<button class="bg-transparent border border-outline text-on-surface-variant px-4 py-2 rounded font-label-md text-label-md hover:bg-surface-variant transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">info</span> Details
+                    </button>
+</div>
+</div>
+<!-- Transaction Card 3 (Success) -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-stack-md shadow-[0_10px_15px_-3px_rgba(15,23,42,0.08)] flex flex-col md:flex-row md:items-center justify-between gap-stack-sm hover:bg-surface-container-low transition-colors group cursor-pointer relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-secondary"></div>
+<div class="flex flex-col gap-1 pl-2">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-on-surface-variant">20 Oct 2023, 18:45</span>
+<div class="flex items-center gap-1 bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded-full font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                            Success
+                        </div>
+</div>
+<span class="font-headline-md text-headline-md text-on-surface">$25.00</span>
+<span class="font-label-sm text-label-sm text-outline font-mono">REF: BR-8839-C4</span>
+</div>
+<div class="flex items-center gap-4 pl-2 md:pl-0">
+<button class="bg-transparent border border-outline text-on-surface-variant px-4 py-2 rounded font-label-md text-label-md hover:bg-surface-variant transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">receipt</span> View Receipt
+                    </button>
+</div>
+</div>
+</div>
+<!-- Security Link -->
+<div class="pt-stack-lg flex justify-center">
+<a class="flex items-center gap-2 bg-surface-container-low hover:bg-surface-container px-6 py-4 rounded-xl border border-outline-variant shadow-sm transition-all group" href="#">
+<div class="bg-primary-container text-on-primary-container p-2 rounded-full group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">shield_person</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Security &amp; Tokens</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Manage saved payment methods</span>
+</div>
+<span class="material-symbols-outlined text-outline ml-4 group-hover:translate-x-1 transition-transform">arrow_right_alt</span>
+</a>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 rounded-t-xl bg-surface-container-lowest dark:bg-surface-container shadow-[0_-4px_10px_rgba(0,0,0,0.05)] shadow-lg flex justify-around items-center h-20 px-4 pb-safe font-label-sm text-label-sm text-secondary dark:text-secondary-fixed-dim">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-1 hover:bg-surface-container-high dark:hover:bg-surface-variant rounded-full active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">pedal_bike</span>
+<span class="mt-1">Rent</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-secondary-container dark:bg-secondary text-on-secondary-container dark:text-on-secondary rounded-full px-4 py-1 hover:bg-surface-container-high dark:hover:bg-surface-variant active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: &quot;FILL&quot; 1;">payments</span>
+<span class="mt-1">Payments</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-1 hover:bg-surface-container-high dark:hover:bg-surface-variant rounded-full active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">receipt_long</span>
+<span class="mt-1">History</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-1 hover:bg-surface-container-high dark:hover:bg-surface-variant rounded-full active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">shield_person</span>
+<span class="mt-1">Security</span>
+</a>
+</nav>
+<!-- Desktop Sidebar/Nav (Hidden on Mobile, placeholder for layout) -->
+<nav class="hidden md:flex fixed top-0 h-full w-64 bg-surface border-r border-outline-variant pt-24 px-6 flex-col gap-2">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">pedal_bike</span>
+            Rent
+        </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-secondary-container text-on-secondary-container font-bold transition-colors font-label-md text-label-md shadow-[0_10px_15px_-3px_rgba(15,23,42,0.08)]" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: &quot;FILL&quot; 1;">payments</span>
+            Payments
+        </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">receipt_long</span>
+            History
+        </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">shield_person</span>
+            Security
+        </a>
+</nav>
+<!-- Adjust main content padding for desktop sidebar -->
+<style>
+        @media (min-width: 768px) {
+            main {
+                margin-left: 16rem;
+                max-width: calc(100% - 16rem);
+            }
+        }
+    </style>
+
+
+</body></html>
